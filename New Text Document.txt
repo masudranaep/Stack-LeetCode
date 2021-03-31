@@ -1,0 +1,20 @@
+  public List<Integer> dfs(TreeNode root){
+    List<Integer> value = new ArrayList<Integer>();
+    if(root == null){
+        return value;
+    }
+    Stack<TreeNode> stack = new Stack<TreeNode>();
+    stack.push(root);
+    while(!stack.isEmpty()){
+        TreeNode current = stack.pop();
+        value.add(0,current.val);
+        if(current.left != null){
+            stack.push(current.left);
+        }
+        if(current.right != null){
+            stack.push(current.right);
+        }
+    }
+    return value;
+
+ }
